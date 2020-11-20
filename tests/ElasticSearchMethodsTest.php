@@ -48,7 +48,7 @@ class ElasticSearchMethodsTest extends PHPUnit_Framework_TestCase
 
     public function testSuccessfulSearch()
     {
-        $result = $this->model->search('with results');
+        $result = $this->model->searchElasticuent('with results');
 
         $this->assertInstanceOf('Elasticquent\ElasticquentResultCollection', $result);
         $this->assertEquals(2, $result->totalHits());
@@ -62,7 +62,7 @@ class ElasticSearchMethodsTest extends PHPUnit_Framework_TestCase
 
     public function testUnsuccessfulSearch()
     {
-        $result = $this->model->search('with no results');
+        $result = $this->model->searchElasticuent('with no results');
 
         $expectedHits = [
             'total' => 0,
@@ -82,9 +82,9 @@ class ElasticSearchMethodsTest extends PHPUnit_Framework_TestCase
 
     public function testSearchWithEmptyParamters()
     {
-        $this->model->search();
-        $this->model->search(null);
-        $this->model->search('');
+        $this->model->searchElasticuent();
+        $this->model->searchElasticuent(null);
+        $this->model->searchElasticuent('');
 
         $this->addToAssertionCount(3);  // does not throw an exception
     }

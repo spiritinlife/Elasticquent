@@ -243,7 +243,7 @@ trait ElasticquentTrait
             $params['body']['sort'] = $sort;
         }
 
-        $result = $instance->getElasticSearchClient()->search($params);
+        $result = $instance->getElasticSearchClient()->searchElasticuent($params);
 
         return static::hydrateElasticsearchResult($result);
     }
@@ -260,7 +260,7 @@ trait ElasticquentTrait
     {
         $instance = new static;
 
-        $result = $instance->getElasticSearchClient()->search($params);
+        $result = $instance->getElasticSearchClient()->searchElasticuent($params);
 
         return static::hydrateElasticsearchResult($result);
     }
@@ -274,7 +274,7 @@ trait ElasticquentTrait
      *
      * @return ElasticquentResultCollection
      */
-    public static function search($term = '')
+    public static function searchElasticuent($term = '')
     {
         $instance = new static;
 
@@ -282,7 +282,7 @@ trait ElasticquentTrait
 
         $params['body']['query']['match']['_all'] = $term;
 
-        $result = $instance->getElasticSearchClient()->search($params);
+        $result = $instance->getElasticSearchClient()->searchElasticuent($params);
 
         return static::hydrateElasticsearchResult($result);
     }
