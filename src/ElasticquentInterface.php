@@ -5,7 +5,7 @@ interface ElasticquentInterface
     /**
      * Get ElasticSearch Client
      *
-     * @return Elasticsearch\Client
+     * @return Elasticsearch6\Client
      */
     public function getElasticSearchClient();
 

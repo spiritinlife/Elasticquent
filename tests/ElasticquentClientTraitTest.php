@@ -9,6 +9,6 @@ class ElasticquentClientTraitTest extends PHPUnit_Framework_TestCase
 
     public function testClient()
     {
-        $this->assertInstanceOf('ElasticSearch\Client', $this->model->getElasticSearchClient());
+        $this->assertInstanceOf('Elasticsearch6\Client', $this->model->getElasticSearchClient());
     }
 }

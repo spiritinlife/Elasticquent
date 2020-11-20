@@ -13,7 +13,7 @@ class SearchTestModel extends Eloquent implements ElasticquentInterface
 
     public function getElasticSearchClient()
     {
-        $elasticClient = m::mock('Elasticsearch\Client');
+        $elasticClient = m::mock('Elasticsearch6\Client');
 
         $elasticClient
             ->shouldReceive('search')
