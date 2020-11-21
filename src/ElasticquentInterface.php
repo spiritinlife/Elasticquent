@@ -72,7 +72,7 @@ interface ElasticquentInterface
     /**
      * Search a Type.
      */
-    public static function searchElasticuent($query = array());
+    public static function searchElasticquent($query = array());
 
     /**
      * Add to Search Index
