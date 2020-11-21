@@ -243,7 +243,7 @@ trait ElasticquentTrait
             $params['body']['sort'] = $sort;
         }
 
-        $result = $instance->getElasticSearchClient()->searchElasticquent($params);
+        $result = $instance->getElasticSearchClient()->search($params);
 
         return static::hydrateElasticsearchResult($result);
     }
@@ -260,7 +260,7 @@ trait ElasticquentTrait
     {
         $instance = new static;
 
-        $result = $instance->getElasticSearchClient()->searchElasticquent($params);
+        $result = $instance->getElasticSearchClient()->search($params);
 
         return static::hydrateElasticsearchResult($result);
     }
@@ -282,7 +282,7 @@ trait ElasticquentTrait
 
         $params['body']['query']['match']['_all'] = $term;
 
-        $result = $instance->getElasticSearchClient()->searchElasticquent($params);
+        $result = $instance->getElasticSearchClient()->search($params);
 
         return static::hydrateElasticsearchResult($result);
     }
@@ -336,7 +336,7 @@ trait ElasticquentTrait
         // Get our document body data.
         $params['body']['doc'] = $this->getIndexDocumentData();
 
-        return $this->getElasticSearchClient()->update($params);
+        return $this->getElasticSearchClient()->upddate($params);
     }
 
     /**
